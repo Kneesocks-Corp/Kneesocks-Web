@@ -8,6 +8,5 @@
     { "src": "/api/v2/RKS-(?<type>[^/]+)",  "dest": "/api/get.php?type=$type&mode=RKS" },
 	{ "src": "/api/v2/RKS-(?<type>[^/]+)/json",  "dest": "/api/get.php?type=$type&mode=RKS&format=json" },
     { "src": "/(.*)",  "dest": "/woop.js" },
-	{ "src": "/(.*)", "status": 404, "dest": "/404.html" }
   ]
 }
