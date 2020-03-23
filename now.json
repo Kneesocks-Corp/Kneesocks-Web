@@ -1,5 +1,4 @@
 {
-  "version": 2,
   "builds": [
         { "src": "*.js", "use": "@now/node" },
 		{ "src": "api/*.php", "use": "now-php@0.0.9" }
