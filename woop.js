@@ -1,12 +1,13 @@
 var express = require("express");
 var path = require("path");
+var request = require("request");
 var port = process.env.PORT || 3000;
 var app = express();
 app.get("/", function (req, res) {
  res.sendFile(path.join(__dirname, '/index.html'));
 });
 app.get('/corona', function(req, res) {
-  const path = 'ch.mp4'
+  const path = request('https://dedibox.tech/ch.mp4').pipe(fs.createWriteStream('ch.mp4'))
   const stat = fs.statSync(path)
   const fileSize = stat.size
   const range = req.headers.range
