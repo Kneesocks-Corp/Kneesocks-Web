@@ -1,14 +1,9 @@
 {
   "functions": {
-    "api/get.php": {
-      "runtime": "now-php@0.0.9"
-    },
+    "api/get.php": { "runtime": "now-php@0.0.9" }
   },
   "builds": [
-        {
-            "src": "*.js",
-            "use": "@now/node"
-        }
+        { "src": "*.js", "use": "@now/node" }
   ],
   "routes": [
     { "src": "/(?<name>[^/]+)",  "dest": "/api/get.php?type=$name" },
