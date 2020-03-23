@@ -6,7 +6,7 @@
   ],
   "routes": [
     { "src": "/api/v2/RKS-(?<type>[^/]+)",  "dest": "/api/get.php?type=$type&mode=RKS" },
-	{ "src": "/api/v2/RKS-(?<type>[^/]+).(.*)",  "dest": "/api/get.php?type=$type&mode=RKS&format=$1" },
+	{ "src": "/api/v2/RKS-(?<type>[^/]+).json",  "dest": "/api/get.php?type=$type&mode=RKS&format=json" },
     { "src": "/(.*)",  "dest": "/woop.js" }
   ]
 }
