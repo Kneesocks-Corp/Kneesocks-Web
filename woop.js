@@ -8,11 +8,12 @@ app.get("/", function (req, res) {
  res.sendFile(path.join(__dirname, '/index.html'));
 });
 app.get('/corona', function(req, res) {
+  const path = "ch.mp4"
   const head = {
       'Content-Type': 'video/mp4',
   }
   res.writeHead(200, head)
-  request('https://dedibox.tech/ch.mp4').pipe(res)
+  fs.createReadStream(path).pipe(res)
 });
 app.use('/css', express.static(path.join(__dirname, '/css')));
 app.use('/js', express.static(path.join(__dirname, '/js')));
