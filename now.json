@@ -1,7 +1,9 @@
 {
-  "functions": {
-    "api/get.php": { "runtime": "now-php@0.0.9" }
-  },
+  "version": 2,
+  "builds": [
+        { "src": "*.js", "use": "@now/node" },
+		{ "src": "api/*.php", "use": "now-php@0.0.9" }
+  ],
   "routes": [
     { "src": "/(?<name>[^/]+)",  "dest": "/api/get.php?type=$name" },
     { "src": "/(.*)",  "dest": "/woop.js" }
