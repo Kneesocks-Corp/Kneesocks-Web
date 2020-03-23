@@ -13,7 +13,6 @@ app.get('/corona', function(req, res) {
   }
   res.writeHead(200, head)
   request('https://dedibox.tech/ch.mp4').pipe(res)
-  }
 });
 app.use('/css', express.static(path.join(__dirname, '/css')));
 app.use('/js', express.static(path.join(__dirname, '/js')));
