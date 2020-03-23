@@ -1,4 +1,5 @@
 {
+  "version": 2,
   "functions": {
     "api/get.php": { "runtime": "now-php@0.0.9" }
   },
