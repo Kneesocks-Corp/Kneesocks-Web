@@ -20,6 +20,7 @@ if($type === "high" and $mode === "RKS"){
     echo json_encode($output, JSON_PRETTY_PRINT);
 }else{
 	header('Content-Type: application/json');
-    $output['type'] = "N/A";
+    $output['type'] = "n/a";
+	$output['log'] = $format;
     echo json_encode($output, JSON_PRETTY_PRINT);
 }
