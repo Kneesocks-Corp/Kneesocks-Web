@@ -17,7 +17,7 @@ app.get("/test", function (req, res) {
       'Content-Type': 'image/jpeg',
       'Content-Length': img.length 
  });
- res.end(img);
+ res.send(img);
 });
 app.use(function(req, res, next){
   res.status(404).sendFile(path.join(__dirname, '/404.html'));
