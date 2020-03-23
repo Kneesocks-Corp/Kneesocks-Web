@@ -3,7 +3,6 @@ $mode = $_GET['mode'];
 $type = $_GET['type'];
 $format = $_GET['format'];
 error_reporting(0);
-// MongoDB wird bald noch hinzugefügt für random pics und etc
 if($type === "high" and $mode === "RKS"){
 	$remoteImage = "https://www.elsetge.cat/myimg/f/131-1316976_anime-girl-in-knee-high-socks.png";
 	if($format === "json"){
