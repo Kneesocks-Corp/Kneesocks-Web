@@ -10,7 +10,7 @@ if($type === "high" and $mode === "RKS"){
 		header('Content-Type: application/json');
 	    $output['url'] = $remoteImage;
 		echo json_encode($output, JSON_PRETTY_PRINT);
-	}elseif($format === "img"){
+	}else{
 		$imginfo = getimagesize($remoteImage);
 		header("Content-type: {$imginfo['mime']}");
 		readfile($remoteImage);
