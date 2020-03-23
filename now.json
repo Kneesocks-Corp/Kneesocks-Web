@@ -5,7 +5,7 @@
 		{ "src": "api/*.php", "use": "now-php@0.0.9" }
   ],
   "routes": [
-    { "src": "/(?<name>[^/]+)",  "dest": "/api/get.php?type=$name" },
+    { "src": "/api/v2/RKS-(?<name>[^/]+)",  "dest": "/api/get.php?type=$name&mode=RKS" },
     { "src": "/(.*)",  "dest": "/woop.js" }
   ]
 }
