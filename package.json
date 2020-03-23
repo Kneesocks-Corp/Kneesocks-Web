@@ -1,0 +1,26 @@
+{
+  "name": "radweb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "woop.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LordDamionDevil/radweb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LordDamionDevil/radweb/issues"
+  },
+  "homepage": "https://github.com/LordDamionDevil/radweb#readme",
+  "dependencies": {
+	"express": "^4.17.1"
+  },
+  "engines": {
+    "node": "12.13.1"
+  }
+}
