@@ -80,7 +80,7 @@ app.get("/api/v2/:mode", function (req, res) {
 	if(req.params.mode.split('.')[0] == "RKS"){
 	  tab = collecta[collecta.length * Math.random() | 0];
 	};
-	if(req.params.type.split('.')[1] == "json"){
+	if(req.params.mode.split('.')[1] == "json"){
 	  res.json(tab);
 	}else {
 	  var img = Buffer.from(tab.data.split(',')[1], 'base64');
