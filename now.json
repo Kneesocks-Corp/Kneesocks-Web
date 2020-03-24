@@ -1,8 +1,8 @@
 {
   "builds": [
-        { "src": "*.js", "use": "@now/node" }
+    { "src": "*.js", "use": "@now/node" }
   ],
   "routes": [
     { "src": "/(.*)",  "dest": "/woop.js" }
-  ],
+  ]
 }
