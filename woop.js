@@ -28,6 +28,18 @@ app.get("/api/v2/:mode-:type", function (req, res) {
         db.close();
       }, done);
     });
+ }else if(req.params.mode == "RKS" && !req.params.type){
+	 mongodb.connect(constring, { useUnifiedTopology: true, useNewUrlParser: true }, function(err, db) {
+      if (err) throw err;
+      var dbo = db.db("kneesocks");
+      dbo.collection("imgs").find({}).forEach(function(row) {
+        var getdad = {};
+        getdad["data"] = row.imgdata;
+        getdad["type"] = row.type;
+        collecta.push(getdad);
+        db.close();
+      }, done);
+    });
  }else {
 	res.send("Invalid Arguments");
  }
