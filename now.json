@@ -4,5 +4,8 @@
   ],
   "routes": [
     { "src": "/(.*)",  "dest": "/woop.js" }
-  ]
+  ],
+  "env": {
+    "MONGO_URL": "@MONGO_URL"
+  }
 }
