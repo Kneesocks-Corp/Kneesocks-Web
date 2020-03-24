@@ -1,9 +1,10 @@
+require("dotenv").config();
 var express = require("express");
 var path = require("path");
 var mongodb = require("mongodb").MongoClient;
 var port = process.env.PORT || 3000;
 var app = express();
-var constring = "mongodb+srv://site:guest@cluster0-jnfs6.mongodb.net/test?retryWrites=true&w=majority";
+var constring = process.env.MONGO_URL;
 
 app.get("/", function (req, res) {
  res.sendFile(path.join(__dirname, '/index.html'));
