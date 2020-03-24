@@ -15,11 +15,11 @@ app.get('/corona', function(req, res) {
 });
 app.get("/api/v2/:mode-:type", function (req, res) {
  var collecta = [];
- if(req.params.mode == "RKS" && req.params.type.split('.')[0] == "high"){
+ if(req.params.mode == "RKS" && req.params.type.split('.')[0] == "high" || req.params.mode == "RKS" && req.params.type.split('.')[0] == "low"){
 	mongodb.connect(constring, { useUnifiedTopology: true, useNewUrlParser: true }, function(err, db) {
       if (err) throw err;
       var dbo = db.db("kneesocks");
-      dbo.collection("imgs").find({ "type": "high" }).forEach(function(row) {
+      dbo.collection("imgs").find({ "type": req.params.type.split('.')[0] }).forEach(function(row) {
         var getdad = {};
         getdad["data"] = row.imgdata;
         getdad["type"] = row.type;
@@ -31,12 +31,16 @@ app.get("/api/v2/:mode-:type", function (req, res) {
 	res.send("Invalid Arguments");
  }
  function done(err){
-	var tab = collecta[collecta.length * Math.random() | 0];
-	if(req.params.type.substring(0, req.params.type.indexOf('.')) == "json"){
-		res.json(tab);
+	if(collecta.length == 0){res.send("Invalid Arguments");};
+	var tab = "";
+	if(req.params.mode == "RKS"){
+	  tab = collecta[collecta.length * Math.random() | 0];
+	};
+	if(req.params.type.split('.')[1] == "json"){
+	  res.json(tab);
 	}else {
-	var img = Buffer.from(tab.data.split(',')[1], 'base64');
-	res.end(img);
+	  var img = Buffer.from(tab.data.split(',')[1], 'base64');
+	  res.end(img);
 	}
  };
 });
